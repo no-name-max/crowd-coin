@@ -1,12 +1,13 @@
 {
-  "name": "kickstart",
+  "name": "crowd-coin",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "mocha",
     "develop": "next dev",
-    "start": "node server.js"
+    "start": "node server.js",
+    "now-build": "cd scrypt && yarn link && cd .. && yarn link scrypt && next build"
   },
   "author": "",
   "license": "ISC",
