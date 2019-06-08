@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "name": "crowd-coin",
+  "builds": [{ "src": "next.config.js", "use": "@now/next" }],
+  "routes": [
+    {
+      "src": "/_next/static/(.*)",
+      "dest": "/_next/static/$1",
+      "headers": {
+        "cache-control": "s-maxage=86400"
+      }
+    },
+    {
+      "src": "^\\/campaigns\\/new(?:\\/)?$",
+      "dest": "/campaigns/new"
+    },
+    {
+      "src": "^\\/campaigns\\/([^\\/]+?)(?:\\/)?$",
+      "dest": "/campaigns/show?address=$1"
+    },
+    {
+      "src": "^\\/campaigns\\/([^\\/]+?)\\/requests(?:\\/)?$",
+      "dest": "/campaigns/requests?address=$1"
+    },
+    {
+      "src": "^\\/campaigns\\/([^\\/]+?)\\/requests\\/new(?:\\/)?$",
+      "dest": "/campaigns/requests/new?address=$1"
+    }
+  ]
+}
